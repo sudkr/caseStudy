@@ -1,0 +1,39 @@
+<div class="col-md-6 col-md-offset-2">
+  <h3>Register</h3>
+  <br />
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email Address: </label>
+      <input type="email" class="form-control" formControlName="email" id="email" />
+      <div *ngIf="submitted && registerForm.controls.email.errors" class="error">
+        <div class="text-danger" *ngIf="registerForm.controls.email.errors.required">
+          Email is required ..
+        </div>
+      </div>
+      <label for="firstName">First Name: </label>
+      <input type="text" class="form-control" formControlName="firstName" id="firstName" />
+      <div *ngIf="submitted && registerForm.controls.firstName.errors" class="error">
+        <div class="text-danger" *ngIf="registerForm.controls.firstName.errors.required">
+          First Name is required ..
+        </div>
+      </div>
+      <label for="lastName">Last Name: </label>
+      <input type="text" class="form-control" formControlName="lastName" id="lastName" />
+      <div *ngIf="submitted && registerForm.controls.lastName.errors" class="error">
+        <div class="text-danger" *ngIf="registerForm.controls.lastName.errors.required">
+          Last Name is required ..
+        </div>
+      </div>
+      <label for="password">Password: </label>
+      <input type="password" class="form-control" formControlName="password" id="txtEmail" />
+      <div *ngIf="submitted && signupForm.controls.password.errors" class="error">
+        <div class="text-danger" *ngIf="signupForm.controls.password.errors.required">
+          password is required ..
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success">Add User</button> &nbsp;
+    <button class="btn btn-danger" type="reset">Cancel</button>&nbsp;
+    <button class="btn btn-primary" (click)="backToList()">Back To List</button>
+  </form>
+</div>

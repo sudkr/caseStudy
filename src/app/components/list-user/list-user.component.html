@@ -1,0 +1,34 @@
+<div class="col-lg-8">
+  <h2>User Details..</h2>
+  <br/>
+  <button class="btn btn-success" (click)="addUser()">addUser</button> &nbsp;&nbsp;
+  <button class="btn btn-danger" (click)="logOut()">logOut</button> &nbsp;&nbsp;
+  <br/>
+  <br/>
+  <table class="table table-striped table-responsive table hover">
+    <thead>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+       <tr *ngFor="let u of users; index as i">
+        <td>{{u.id}}</td>
+        <td>{{u.firstName}}</td>
+        <td>{{u.lastName}}</td>
+        <td>{{u.email}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteUser(u)">Delete</button> &nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr *ngIf="!users || users.length==0">
+        <th colspan="5">
+          <p class="text-right text-danger">
+            Sorry, no users are available..!
+          </p>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

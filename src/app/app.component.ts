@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'loginregister';
+  title = 'AngularFrontEnd';
+  date: Date;
+
+ngOnInit() {
+  this.date = new Date();
+  this.date.setDate( this.date.getDate());
+}
 }
